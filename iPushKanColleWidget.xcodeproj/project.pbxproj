@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7CEC38B71999288A00F25D37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38B61999288A00F25D37 /* Foundation.framework */; };
+		7CEC38B91999288A00F25D37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38B81999288A00F25D37 /* CoreGraphics.framework */; };
+		7CEC38BB1999288A00F25D37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38BA1999288A00F25D37 /* UIKit.framework */; };
+		7CEC38C11999288A00F25D37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CEC38BF1999288A00F25D37 /* InfoPlist.strings */; };
+		7CEC38C31999288A00F25D37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEC38C21999288A00F25D37 /* main.m */; };
+		7CEC38C71999288A00F25D37 /* PushKanColleWidgetAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEC38C61999288A00F25D37 /* PushKanColleWidgetAppDelegate.m */; };
+		7CEC38CA1999288A00F25D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEC38C81999288A00F25D37 /* Main.storyboard */; };
+		7CEC38CD1999288A00F25D37 /* PushKanColleWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEC38CC1999288A00F25D37 /* PushKanColleWidgetViewController.m */; };
+		7CEC38CF1999288A00F25D37 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CEC38CE1999288A00F25D37 /* Images.xcassets */; };
+		7CEC38D61999288A00F25D37 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38D51999288A00F25D37 /* XCTest.framework */; };
+		7CEC38D71999288B00F25D37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38B61999288A00F25D37 /* Foundation.framework */; };
+		7CEC38D81999288B00F25D37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38BA1999288A00F25D37 /* UIKit.framework */; };
+		7CEC38E01999288B00F25D37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CEC38DE1999288B00F25D37 /* InfoPlist.strings */; };
+		7CEC38E21999288B00F25D37 /* iPushKanColleWidgetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEC38E11999288B00F25D37 /* iPushKanColleWidgetTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7CEC38D91999288B00F25D37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CEC38AB1999288A00F25D37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CEC38B21999288A00F25D37;
+			remoteInfo = iPushKanColleWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7CEC38B31999288A00F25D37 /* iPushKanColleWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPushKanColleWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CEC38B61999288A00F25D37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7CEC38B81999288A00F25D37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7CEC38BA1999288A00F25D37 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7CEC38BE1999288A00F25D37 /* iPushKanColleWidget-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPushKanColleWidget-Info.plist"; sourceTree = "<group>"; };
+		7CEC38C01999288A00F25D37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7CEC38C21999288A00F25D37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7CEC38C41999288A00F25D37 /* iPushKanColleWidget-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iPushKanColleWidget-Prefix.pch"; sourceTree = "<group>"; };
+		7CEC38C51999288A00F25D37 /* PushKanColleWidgetAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushKanColleWidgetAppDelegate.h; sourceTree = "<group>"; };
+		7CEC38C61999288A00F25D37 /* PushKanColleWidgetAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushKanColleWidgetAppDelegate.m; sourceTree = "<group>"; };
+		7CEC38C91999288A00F25D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7CEC38CB1999288A00F25D37 /* PushKanColleWidgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushKanColleWidgetViewController.h; sourceTree = "<group>"; };
+		7CEC38CC1999288A00F25D37 /* PushKanColleWidgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushKanColleWidgetViewController.m; sourceTree = "<group>"; };
+		7CEC38CE1999288A00F25D37 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7CEC38D41999288A00F25D37 /* iPushKanColleWidgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPushKanColleWidgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CEC38D51999288A00F25D37 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7CEC38DD1999288B00F25D37 /* iPushKanColleWidgetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPushKanColleWidgetTests-Info.plist"; sourceTree = "<group>"; };
+		7CEC38DF1999288B00F25D37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7CEC38E11999288B00F25D37 /* iPushKanColleWidgetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPushKanColleWidgetTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7CEC38B01999288A00F25D37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CEC38B91999288A00F25D37 /* CoreGraphics.framework in Frameworks */,
+				7CEC38BB1999288A00F25D37 /* UIKit.framework in Frameworks */,
+				7CEC38B71999288A00F25D37 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CEC38D11999288A00F25D37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CEC38D61999288A00F25D37 /* XCTest.framework in Frameworks */,
+				7CEC38D81999288B00F25D37 /* UIKit.framework in Frameworks */,
+				7CEC38D71999288B00F25D37 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7CEC38AA1999288A00F25D37 = {
+			isa = PBXGroup;
+			children = (
+				7CEC38BC1999288A00F25D37 /* iPushKanColleWidget */,
+				7CEC38DB1999288B00F25D37 /* iPushKanColleWidgetTests */,
+				7CEC38B51999288A00F25D37 /* Frameworks */,
+				7CEC38B41999288A00F25D37 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7CEC38B41999288A00F25D37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CEC38B31999288A00F25D37 /* iPushKanColleWidget.app */,
+				7CEC38D41999288A00F25D37 /* iPushKanColleWidgetTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7CEC38B51999288A00F25D37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CEC38B61999288A00F25D37 /* Foundation.framework */,
+				7CEC38B81999288A00F25D37 /* CoreGraphics.framework */,
+				7CEC38BA1999288A00F25D37 /* UIKit.framework */,
+				7CEC38D51999288A00F25D37 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7CEC38BC1999288A00F25D37 /* iPushKanColleWidget */ = {
+			isa = PBXGroup;
+			children = (
+				7CEC38C51999288A00F25D37 /* PushKanColleWidgetAppDelegate.h */,
+				7CEC38C61999288A00F25D37 /* PushKanColleWidgetAppDelegate.m */,
+				7CEC38C81999288A00F25D37 /* Main.storyboard */,
+				7CEC38CB1999288A00F25D37 /* PushKanColleWidgetViewController.h */,
+				7CEC38CC1999288A00F25D37 /* PushKanColleWidgetViewController.m */,
+				7CEC38CE1999288A00F25D37 /* Images.xcassets */,
+				7CEC38BD1999288A00F25D37 /* Supporting Files */,
+			);
+			path = iPushKanColleWidget;
+			sourceTree = "<group>";
+		};
+		7CEC38BD1999288A00F25D37 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CEC38BE1999288A00F25D37 /* iPushKanColleWidget-Info.plist */,
+				7CEC38BF1999288A00F25D37 /* InfoPlist.strings */,
+				7CEC38C21999288A00F25D37 /* main.m */,
+				7CEC38C41999288A00F25D37 /* iPushKanColleWidget-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CEC38DB1999288B00F25D37 /* iPushKanColleWidgetTests */ = {
+			isa = PBXGroup;
+			children = (
+				7CEC38E11999288B00F25D37 /* iPushKanColleWidgetTests.m */,
+				7CEC38DC1999288B00F25D37 /* Supporting Files */,
+			);
+			path = iPushKanColleWidgetTests;
+			sourceTree = "<group>";
+		};
+		7CEC38DC1999288B00F25D37 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CEC38DD1999288B00F25D37 /* iPushKanColleWidgetTests-Info.plist */,
+				7CEC38DE1999288B00F25D37 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7CEC38B21999288A00F25D37 /* iPushKanColleWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CEC38E51999288B00F25D37 /* Build configuration list for PBXNativeTarget "iPushKanColleWidget" */;
+			buildPhases = (
+				7CEC38AF1999288A00F25D37 /* Sources */,
+				7CEC38B01999288A00F25D37 /* Frameworks */,
+				7CEC38B11999288A00F25D37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPushKanColleWidget;
+			productName = iPushKanColleWidget;
+			productReference = 7CEC38B31999288A00F25D37 /* iPushKanColleWidget.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7CEC38D31999288A00F25D37 /* iPushKanColleWidgetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CEC38E81999288B00F25D37 /* Build configuration list for PBXNativeTarget "iPushKanColleWidgetTests" */;
+			buildPhases = (
+				7CEC38D01999288A00F25D37 /* Sources */,
+				7CEC38D11999288A00F25D37 /* Frameworks */,
+				7CEC38D21999288A00F25D37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CEC38DA1999288B00F25D37 /* PBXTargetDependency */,
+			);
+			name = iPushKanColleWidgetTests;
+			productName = iPushKanColleWidgetTests;
+			productReference = 7CEC38D41999288A00F25D37 /* iPushKanColleWidgetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7CEC38AB1999288A00F25D37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PushKanColleWidget;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = otiai10;
+				TargetAttributes = {
+					7CEC38D31999288A00F25D37 = {
+						TestTargetID = 7CEC38B21999288A00F25D37;
+					};
+				};
+			};
+			buildConfigurationList = 7CEC38AE1999288A00F25D37 /* Build configuration list for PBXProject "iPushKanColleWidget" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7CEC38AA1999288A00F25D37;
+			productRefGroup = 7CEC38B41999288A00F25D37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7CEC38B21999288A00F25D37 /* iPushKanColleWidget */,
+				7CEC38D31999288A00F25D37 /* iPushKanColleWidgetTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7CEC38B11999288A00F25D37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CEC38CF1999288A00F25D37 /* Images.xcassets in Resources */,
+				7CEC38C11999288A00F25D37 /* InfoPlist.strings in Resources */,
+				7CEC38CA1999288A00F25D37 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CEC38D21999288A00F25D37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CEC38E01999288B00F25D37 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7CEC38AF1999288A00F25D37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CEC38C31999288A00F25D37 /* main.m in Sources */,
+				7CEC38C71999288A00F25D37 /* PushKanColleWidgetAppDelegate.m in Sources */,
+				7CEC38CD1999288A00F25D37 /* PushKanColleWidgetViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CEC38D01999288A00F25D37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CEC38E21999288B00F25D37 /* iPushKanColleWidgetTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7CEC38DA1999288B00F25D37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CEC38B21999288A00F25D37 /* iPushKanColleWidget */;
+			targetProxy = 7CEC38D91999288B00F25D37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7CEC38BF1999288A00F25D37 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CEC38C01999288A00F25D37 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7CEC38C81999288A00F25D37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CEC38C91999288A00F25D37 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7CEC38DE1999288B00F25D37 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CEC38DF1999288B00F25D37 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7CEC38E31999288B00F25D37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7CEC38E41999288B00F25D37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7CEC38E61999288B00F25D37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPushKanColleWidget/iPushKanColleWidget-Prefix.pch";
+				INFOPLIST_FILE = "iPushKanColleWidget/iPushKanColleWidget-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7CEC38E71999288B00F25D37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPushKanColleWidget/iPushKanColleWidget-Prefix.pch";
+				INFOPLIST_FILE = "iPushKanColleWidget/iPushKanColleWidget-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7CEC38E91999288B00F25D37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iPushKanColleWidget.app/iPushKanColleWidget";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPushKanColleWidget/iPushKanColleWidget-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iPushKanColleWidgetTests/iPushKanColleWidgetTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7CEC38EA1999288B00F25D37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iPushKanColleWidget.app/iPushKanColleWidget";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPushKanColleWidget/iPushKanColleWidget-Prefix.pch";
+				INFOPLIST_FILE = "iPushKanColleWidgetTests/iPushKanColleWidgetTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7CEC38AE1999288A00F25D37 /* Build configuration list for PBXProject "iPushKanColleWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CEC38E31999288B00F25D37 /* Debug */,
+				7CEC38E41999288B00F25D37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CEC38E51999288B00F25D37 /* Build configuration list for PBXNativeTarget "iPushKanColleWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CEC38E61999288B00F25D37 /* Debug */,
+				7CEC38E71999288B00F25D37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7CEC38E81999288B00F25D37 /* Build configuration list for PBXNativeTarget "iPushKanColleWidgetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CEC38E91999288B00F25D37 /* Debug */,
+				7CEC38EA1999288B00F25D37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7CEC38AB1999288A00F25D37 /* Project object */;
+}
