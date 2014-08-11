@@ -457,6 +457,7 @@
 				7CEC38E71999288B00F25D37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CEC38E81999288B00F25D37 /* Build configuration list for PBXNativeTarget "iPushKanColleWidgetTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +466,7 @@
 				7CEC38EA1999288B00F25D37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
