@@ -11,5 +11,8 @@
 @interface PushKanColleWidgetAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, atomic) NSString *username;
+@property (strong, atomic) NSString *idStr;
+@property (strong, atomic) NSString *deviceToken;
 
 @end

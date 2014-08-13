@@ -18,11 +18,24 @@
     // Override point for customization after application launch.
     PushKanColleWidgetTwitterAccount *store = [PushKanColleWidgetTwitterAccount new];
     [store requestAccessToTwitterAccountWithCompletion:^(NSString *username, NSString *idStr){
-        NSLog(@"ここでうけうr %@ %@", username, idStr);
+        // If implement requesting here in AppDelegate, username and idStr should be app property
+        self.username = username;
+        self.idStr = idStr;
+        UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge;
+        [application registerForRemoteNotificationTypes:types];
     }];
     return YES;
 }
-							
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    self.deviceToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"%@ %@ %@", self.username, self.idStr, self.deviceToken);
+}
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"%@ %@ %@", self.username, self.idStr, error);
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
