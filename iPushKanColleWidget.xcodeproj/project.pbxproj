@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C7C8759199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7C8758199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m */; };
 		7CEC38B71999288A00F25D37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38B61999288A00F25D37 /* Foundation.framework */; };
 		7CEC38B91999288A00F25D37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38B81999288A00F25D37 /* CoreGraphics.framework */; };
 		7CEC38BB1999288A00F25D37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38BA1999288A00F25D37 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C7C8757199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushKanColleWidgetTwitterAccount.h; sourceTree = "<group>"; };
+		7C7C8758199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushKanColleWidgetTwitterAccount.m; sourceTree = "<group>"; };
 		7CEC38B31999288A00F25D37 /* iPushKanColleWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPushKanColleWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CEC38B61999288A00F25D37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7CEC38B81999288A00F25D37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 				7CEC38CC1999288A00F25D37 /* PushKanColleWidgetViewController.m */,
 				7CEC38CE1999288A00F25D37 /* Images.xcassets */,
 				7CEC38BD1999288A00F25D37 /* Supporting Files */,
+				7C7C8757199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.h */,
+				7C7C8758199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m */,
 			);
 			path = iPushKanColleWidget;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			files = (
 				7CEC38C31999288A00F25D37 /* main.m in Sources */,
 				7CEC38C71999288A00F25D37 /* PushKanColleWidgetAppDelegate.m in Sources */,
+				7C7C8759199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m in Sources */,
 				7CEC38CD1999288A00F25D37 /* PushKanColleWidgetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

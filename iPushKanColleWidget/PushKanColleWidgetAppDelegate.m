@@ -7,6 +7,7 @@
 //
 
 #import "PushKanColleWidgetAppDelegate.h"
+#import "PushKanColleWidgetTwitterAccount.h"
 
 @import Accounts;
 
@@ -15,23 +16,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    ACAccountStore *store = [ACAccountStore new];
-    ACAccountType *type = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-    [store requestAccessToAccountsWithType:type options:nil completion:^(BOOL granted, NSError *error) {
-        if (! granted || error != nil) {
-            return;
-        }
-        NSArray *accounts = [store accountsWithAccountType:type];
-        if (accounts.count == 0) {
-            NSLog(@"アカウントない");
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"i艦これウィジェット" message:@"デバイスにTwitterアカウントが紐づけられてないっぽい？" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-            [alert show];
-            return;
-        }
-        ACAccount *account = accounts[0];
-        NSString *username = [account username];
-        NSString *userId = [[account valueForKey:@"properties"] objectForKey:@"user_id"];
-        NSLog(@"%@ %@", username, userId);
+    PushKanColleWidgetTwitterAccount *store = [PushKanColleWidgetTwitterAccount new];
+    [store requestAccessToTwitterAccountWithCompletion:^(NSString *username, NSString *idStr){
+        NSLog(@"ここでうけうr %@ %@", username, idStr);
     }];
     return YES;
 }
