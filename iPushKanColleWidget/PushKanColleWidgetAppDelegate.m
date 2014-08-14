@@ -8,6 +8,7 @@
 
 #import "PushKanColleWidgetAppDelegate.h"
 #import "PushKanColleWidgetTwitterAccount.h"
+#import "PushKanColleWidgetUserRemoteRepository.h"
 
 @import Accounts;
 
@@ -30,11 +31,27 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     self.deviceToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSLog(@"%@ %@ %@", self.username, self.idStr, self.deviceToken);
+    
+    [self registerUserInfoToPushServer];
 }
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    NSLog(@"%@ %@ %@", self.username, self.idStr, error);
+    if (! DEBUG) {
+        NSLog(@"%@", error);
+        return;
+    }
+    
+    self.deviceToken = @"324175ddc7f8ba3944f60cb88b30b955b6d215570e59b5088a531580742b66e6";
+    
+    [self registerUserInfoToPushServer];
+}
+
+- (void)registerUserInfoToPushServer
+{
+    [PushKanColleWidgetUserRemoteRepository save:self.username idStr:self.idStr deviceToken:self.deviceToken completion:^(NSURLResponse *response, NSData *data, NSError *connectionError){
+        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        NSLog(@"ServerResult\n%@", result);
+    }];
 }
 - (void)applicationWillResignActive:(UIApplication *)application
 {

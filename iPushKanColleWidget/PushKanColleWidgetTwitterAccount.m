@@ -19,6 +19,10 @@
         }
         NSArray *accounts = [self accountsWithAccountType:type];
         if (accounts.count == 0) {
+            if (DEBUG) {
+                blok(@"otiai10", @"140021552");
+                return;
+            }
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"i艦これウィジェット" message:@"デバイスにTwitterアカウントが紐づけられてないっぽい？" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
             [alert show];
             return;
