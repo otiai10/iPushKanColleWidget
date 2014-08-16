@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PushKanColleWidgetViewController : UIViewController
+@interface PushKanColleWidgetViewController : UITableViewController
 
 @end
