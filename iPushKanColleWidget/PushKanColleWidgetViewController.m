@@ -18,6 +18,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSString *username = [ud stringForKey:@"username"];
+    
+    // ナビゲーションバーのところに名前出す
+    self.navigationItem.title = [NSString stringWithFormat:@"@%@", username];
 }
 
 - (void)didReceiveMemoryWarning

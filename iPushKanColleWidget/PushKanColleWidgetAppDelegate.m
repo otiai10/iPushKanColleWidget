@@ -24,6 +24,11 @@
         self.idStr = idStr;
         UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge;
         [application registerForRemoteNotificationTypes:types];
+        
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        [ud setObject:self.username forKey:@"username"];
+        [ud setObject:self.idStr forKey:@"idStr"];
+        [ud synchronize];
     }];
     return YES;
 }
