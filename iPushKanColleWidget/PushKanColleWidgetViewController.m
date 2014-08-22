@@ -23,7 +23,7 @@
     NSString *username = [ud stringForKey:@"username"];
     
     // ナビゲーションバーのところに名前出す
-    self.navigationItem.title = [NSString stringWithFormat:@"@%@", username];
+    self.navigationItem.title = [NSString stringWithFormat:@"%@", username];
 }
 
 - (void)didReceiveMemoryWarning
