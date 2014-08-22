@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Push Kan Colle Widget View Controller - ここは何？-->
+        <!--Push Kan Colle Widget View Controller - ぽい-->
         <scene sceneID="tWr-gO-9bd">
             <objects>
                 <tableViewController id="mwL-LW-aJv" customClass="PushKanColleWidgetViewController" sceneMemberID="viewController">
@@ -27,7 +27,7 @@
                             <outlet property="delegate" destination="mwL-LW-aJv" id="cFO-rQ-R6d"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ここは何？" id="cQW-Kl-izN"/>
+                    <navigationItem key="navigationItem" title="ぽい" id="cQW-Kl-izN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aR7-7g-68t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
