@@ -53,6 +53,9 @@
 
 - (void)registerUserInfoToPushServer
 {
+    if (DEBUG) {
+        return;
+    }
     [PushKanColleWidgetUserRemoteRepository save:self.username idStr:self.idStr deviceToken:self.deviceToken completion:^(NSURLResponse *response, NSData *data, NSError *connectionError){
         NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         NSLog(@"ServerResult\n%@", result);

@@ -24,6 +24,21 @@
     
     // ナビゲーションバーのところに名前出す
     self.navigationItem.title = [NSString stringWithFormat:@"%@", username];
+    
+    UIRefreshControl *rc = [[UIRefreshControl alloc] init];
+    [rc addTarget:self action:@selector(onPullToRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:rc];
+}
+
+- (void)onPullToRefresh:(UIRefreshControl *) rc
+{
+    [rc beginRefreshing];
+    
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"iPushKanColleWidget" message:@"REFRESHED" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    
+    [av show];
+    
+    [rc endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning
