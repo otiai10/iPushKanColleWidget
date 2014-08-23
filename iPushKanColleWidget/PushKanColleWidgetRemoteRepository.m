@@ -12,10 +12,7 @@
 
 + (NSString *) baseURL
 {
-    if (DEBUG) {
-        return @"http://localhost:9000/";
-    }
-    return @"http://localhost:9000/";
+    return @"http://push-kcwidget.oti10.com/";
 }
 
 @end

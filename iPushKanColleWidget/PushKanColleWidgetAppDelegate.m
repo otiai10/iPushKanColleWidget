@@ -41,21 +41,14 @@
 }
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    if (! DEBUG) {
-        NSLog(@"%@", error);
-        return;
+    if (DEBUG) {
+        self.deviceToken = @"324175ddc7f8ba3944f60cb88b30b955b6d215570e59b5088a531580742b66e6";
+        [self registerUserInfoToPushServer];
     }
-    
-    self.deviceToken = @"324175ddc7f8ba3944f60cb88b30b955b6d215570e59b5088a531580742b66e6";
-    
-    [self registerUserInfoToPushServer];
 }
 
 - (void)registerUserInfoToPushServer
 {
-    if (DEBUG) {
-        return;
-    }
     [PushKanColleWidgetUserRemoteRepository save:self.username idStr:self.idStr deviceToken:self.deviceToken completion:^(NSURLResponse *response, NSData *data, NSError *connectionError){
         NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         NSLog(@"ServerResult\n%@", result);
