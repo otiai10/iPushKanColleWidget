@@ -28,10 +28,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ぽい" id="cQW-Kl-izN">
-                        <barButtonItem key="rightBarButtonItem" title="thanks" id="ERW-fY-rma">
-                            <connections>
-                                <segue destination="vio-Aq-53X" kind="push" id="J9i-Qv-jDR"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="5Hd-v1-ZVq">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="BLT-nq-Upq">
+                                <rect key="frame" x="282" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="vio-Aq-53X" kind="push" id="GIV-ar-GV0"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
