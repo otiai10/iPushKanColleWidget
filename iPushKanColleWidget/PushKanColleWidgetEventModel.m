@@ -24,12 +24,11 @@
     event.display = [NSString stringWithFormat:@"%@%@%@ %@", [dict objectForKey:@"Prefix"], [dict objectForKey:@"Identifier"], [dict objectForKey:@"Unit"], [dict objectForKey:@"Label"]];
     
     // TODO: separate
+    event.optional = @"";
     if ([[dict objectForKey:@"Kind"]  isEqual: @"mission-finish"]) {
         NSArray *arr = [dict objectForKey:@"OptionalStrings"];
         if (arr && ! [arr isEqual:[NSNull null]] && [arr count] > 1) {
             event.optional = arr[1];
-        } else {
-            event.optional = @"";
         }
     }
     

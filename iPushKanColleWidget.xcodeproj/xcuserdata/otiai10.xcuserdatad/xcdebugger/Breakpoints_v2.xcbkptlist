@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iPushKanColleWidget/PushKanColleWidgetEventModel.m"
-            timestampString = "430453590.499024"
+            timestampString = "430464951.766991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "+initWithDictionary:"
             landmarkType = "5">
          </BreakpointContent>
