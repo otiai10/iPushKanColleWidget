@@ -15,7 +15,23 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
             endingLineNumber = "13"
-            landmarkName = "+buildQuery::deviceToken:"
+            landmarkName = "+buildQuery:idStr:deviceToken:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iPushKanColleWidget/PushKanColleWidgetEventModel.m"
+            timestampString = "430453590.499024"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "+initWithDictionary:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

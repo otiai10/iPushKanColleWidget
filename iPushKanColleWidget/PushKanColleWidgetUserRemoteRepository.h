@@ -13,6 +13,6 @@
 @interface PushKanColleWidgetUserRemoteRepository : PushKanColleWidgetRemoteRepository
 
 + (void) save:(NSString *)username idStr:(NSString *)idStr deviceToken:(NSString *)deviceToken completion:(RemoteRepositoryCompletionHandler)block;
-+ (NSURL *) url;
++ (void) load:(NSString *)idStr completion:(RemoteRepositoryCompletionHandler)block;
 
 @end

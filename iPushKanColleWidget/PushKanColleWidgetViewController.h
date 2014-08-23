@@ -10,4 +10,6 @@
 
 @interface PushKanColleWidgetViewController : UITableViewController
 
+@property (strong, atomic) NSArray *events;
+
 @end

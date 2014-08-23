@@ -19,6 +19,10 @@
 {
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", [super baseURL], @"user/register"]];
 }
++ (NSURL *) urlOfGet:(NSString *)idStr
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", [super baseURL], @"user/", idStr]];
+}
 
 + (void) save:(NSString *)username idStr:(NSString *)idStr deviceToken:(NSString *)deviceToken completion:(RemoteRepositoryCompletionHandler)block
 {
@@ -26,6 +30,15 @@
     [request setHTTPMethod:@"POST"];
     NSString *params = [self buildQuery:username idStr:idStr deviceToken:deviceToken];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+    [super sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        block(response, data, connectionError);
+    }];
+}
+
++ (void) load:(NSString *)idStr completion:(RemoteRepositoryCompletionHandler)block
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[self urlOfGet:idStr]];
+    [request setHTTPMethod:@"GET"];
     [super sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         block(response, data, connectionError);
     }];

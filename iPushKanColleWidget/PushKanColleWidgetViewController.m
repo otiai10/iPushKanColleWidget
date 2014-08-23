@@ -7,6 +7,8 @@
 //
 
 #import "PushKanColleWidgetViewController.h"
+#import "PushKanColleWidgetUserRemoteRepository.h"
+#import "PushKanColleWidgetEventModel.h"
 
 @interface PushKanColleWidgetViewController ()
 
@@ -25,6 +27,8 @@
     // ナビゲーションバーのところに名前出す
     self.navigationItem.title = [NSString stringWithFormat:@"%@", username];
     
+    [self loadRemoteEventsToTable];
+    
     UIRefreshControl *rc = [[UIRefreshControl alloc] init];
     [rc addTarget:self action:@selector(onPullToRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:rc];
@@ -34,9 +38,7 @@
 {
     [rc beginRefreshing];
     
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"iPushKanColleWidget" message:@"REFRESHED" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    
-    [av show];
+    [self loadRemoteEventsToTable];
     
     [rc endRefreshing];
 }
@@ -49,7 +51,10 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    if (! self.events) {
+        return 0;
+    }
+    return [self.events count];
 }
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -61,9 +66,36 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    cell.textLabel.text = @"FOOOO";
+    PushKanColleWidgetEventModel *event = [PushKanColleWidgetEventModel initWithDictionary:[self.events objectAtIndex:indexPath.row]];
+    
+    NSDate *d = [NSDate dateWithTimeIntervalSince1970:[event timestamp]];
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    [f setDateFormat:@"HH:mm"];
+    NSString *timeDisplay = [f stringFromDate:d];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ %@", timeDisplay, [event display], [event optional]];
     
     return cell;
+}
+
+- (void)loadRemoteEventsToTable
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSString *idStr = [ud stringForKey:@"idStr"];
+    
+    if (! idStr) {
+        return;
+    }
+    
+    [PushKanColleWidgetUserRemoteRepository load:idStr completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        NSDictionary *user = [dict objectForKey:@"user"];
+        self.events = [user objectForKey:@"Events"];
+        if (! self.events || [self.events isEqual:[NSNull null]]) {
+            self.events = nil;
+        }
+        [self.tableView reloadData];
+    }];
 }
 
 @end
