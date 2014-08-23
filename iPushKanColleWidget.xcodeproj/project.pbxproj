@@ -26,6 +26,7 @@
 		7CEC38D81999288B00F25D37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38BA1999288A00F25D37 /* UIKit.framework */; };
 		7CEC38E01999288B00F25D37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CEC38DE1999288B00F25D37 /* InfoPlist.strings */; };
 		7CEC38E21999288B00F25D37 /* iPushKanColleWidgetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEC38E11999288B00F25D37 /* iPushKanColleWidgetTests.m */; };
+		7CFD667019A8BB0D006B41BA /* PushKanColleWidgetColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFD666F19A8BB0D006B41BA /* PushKanColleWidgetColorModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		7CEC38DD1999288B00F25D37 /* iPushKanColleWidgetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPushKanColleWidgetTests-Info.plist"; sourceTree = "<group>"; };
 		7CEC38DF1999288B00F25D37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7CEC38E11999288B00F25D37 /* iPushKanColleWidgetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPushKanColleWidgetTests.m; sourceTree = "<group>"; };
+		7CFD666E19A8BB0D006B41BA /* PushKanColleWidgetColorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushKanColleWidgetColorModel.h; sourceTree = "<group>"; };
+		7CFD666F19A8BB0D006B41BA /* PushKanColleWidgetColorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushKanColleWidgetColorModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 			children = (
 				7C9335FE19A800D200BE167E /* PushKanColleWidgetEventModel.h */,
 				7C9335FF19A800D200BE167E /* PushKanColleWidgetEventModel.m */,
+				7CFD666E19A8BB0D006B41BA /* PushKanColleWidgetColorModel.h */,
+				7CFD666F19A8BB0D006B41BA /* PushKanColleWidgetColorModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				7C7C8763199BAE0600D0FF10 /* PushKanColleWidgetRemoteRepository.m in Sources */,
 				7CEC38C71999288A00F25D37 /* PushKanColleWidgetAppDelegate.m in Sources */,
 				7C7C8759199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m in Sources */,
+				7CFD667019A8BB0D006B41BA /* PushKanColleWidgetColorModel.m in Sources */,
 				7CEC38CD1999288A00F25D37 /* PushKanColleWidgetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

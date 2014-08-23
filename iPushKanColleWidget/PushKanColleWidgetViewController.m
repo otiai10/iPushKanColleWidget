@@ -9,6 +9,7 @@
 #import "PushKanColleWidgetViewController.h"
 #import "PushKanColleWidgetUserRemoteRepository.h"
 #import "PushKanColleWidgetEventModel.h"
+#import "PushKanColleWidgetColorModel.h"
 
 @interface PushKanColleWidgetViewController ()
 
@@ -80,13 +81,7 @@
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *kind = [[self.events objectAtIndex:indexPath.row] objectForKey:@"Kind"];
-    if ([kind isEqualToString:@"mission-finish"]) {
-        cell.backgroundColor = [UIColor colorWithRed:0.95 green:1.0 blue:0.95 alpha:1.0];
-    } else if ([kind isEqualToString:@"nyukyo-finish"]) {
-        cell.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:1.0 alpha:1.0];
-    } else if ([kind isEqualToString:@"createship-finish"]) {
-        cell.backgroundColor = [UIColor colorWithRed:1.0 green:0.95 blue:0.95 alpha:1.0];
-    }
+    cell.backgroundColor = [PushKanColleWidgetColorModel initByKind:kind];
 }
 
 - (void)loadRemoteEventsToTable
