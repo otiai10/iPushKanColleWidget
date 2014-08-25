@@ -94,9 +94,18 @@
     }
     
     [PushKanColleWidgetUserRemoteRepository load:idStr completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (connectionError != nil) {
+            if (block != nil) {
+                block();
+            }
+            return [self showErrorAlert:[connectionError code] message:@"サーバが忙しいっぽい"];
+        }
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         int code = [[dict objectForKey:@"code"] intValue];
         if (code != 1000) {
+            if (block != nil) {
+                block();
+            }
             return [self showErrorAlert:code message:[dict objectForKey:@"message"]];
         }
         NSDictionary *user = [dict objectForKey:@"user"];
