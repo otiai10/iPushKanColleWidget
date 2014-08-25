@@ -12,5 +12,6 @@
 
 @property (strong, atomic) NSArray *events;
 - (void)showErrorAlert:(int)code message:(NSString *)message;
+typedef void (^ReloadCompletionHandler)(void);
 
 @end

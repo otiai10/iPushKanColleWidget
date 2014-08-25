@@ -28,7 +28,7 @@
     // ナビゲーションバーのところに名前出す
     self.navigationItem.title = [NSString stringWithFormat:@"%@", username];
     
-    [self loadRemoteEventsToTable];
+    [self loadRemoteEventsToTable:nil];
     
     UIRefreshControl *rc = [[UIRefreshControl alloc] init];
     [rc addTarget:self action:@selector(onPullToRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -39,9 +39,9 @@
 {
     [rc beginRefreshing];
     
-    [self loadRemoteEventsToTable];
-    
-    [rc endRefreshing];
+    [self loadRemoteEventsToTable:^{
+        [rc endRefreshing];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,7 +84,7 @@
     cell.backgroundColor = [PushKanColleWidgetColorModel initByKind:kind];
 }
 
-- (void)loadRemoteEventsToTable
+- (void)loadRemoteEventsToTable:(ReloadCompletionHandler)block
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     NSString *idStr = [ud stringForKey:@"idStr"];
@@ -105,6 +105,9 @@
             self.events = nil;
         }
         [self.tableView reloadData];
+        if (block != nil) {
+            block();
+        }
     }];
 }
 
