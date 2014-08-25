@@ -2,7 +2,7 @@
 //  PushKanColleWidgetInfoViewController.m
 //  iPushKanColleWidget
 //
-//  Created by otiai10 on 2014/08/22.
+//  Created by otiai10 on 2014/08/26.
 //  Copyright (c) 2014年 otiai10. All rights reserved.
 //
 
@@ -45,5 +45,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)onRoonyanTwitterLinkTouched:(id)sender {
+    [self openBrowser:@"https://twitter.com/roonyan"];
+}
+- (IBAction)onRoonyanBlogLinkTouched:(id)sender {
+    [self openBrowser:@"http://blog.roomania.biz"];
+}
+- (IBAction)onOtiai10TwitterLinkTouched:(id)sender {
+    [self openBrowser:@"https://twitter.com/otiai10"];
+}
+- (void)openBrowser:(NSString *)url
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
 
 @end

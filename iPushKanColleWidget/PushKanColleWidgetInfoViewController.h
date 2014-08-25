@@ -2,7 +2,7 @@
 //  PushKanColleWidgetInfoViewController.h
 //  iPushKanColleWidget
 //
-//  Created by otiai10 on 2014/08/22.
+//  Created by otiai10 on 2014/08/26.
 //  Copyright (c) 2014年 otiai10. All rights reserved.
 //
 

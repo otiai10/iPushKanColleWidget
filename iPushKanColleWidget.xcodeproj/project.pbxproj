@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C6D270A19ABB98100F6AB24 /* PushKanColleWidgetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6D270919ABB98100F6AB24 /* PushKanColleWidgetInfoViewController.m */; };
 		7C7082A919A772AB00431F18 /* akebono_bot.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7082A819A772AB00431F18 /* akebono_bot.png */; };
 		7C7C8759199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7C8758199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m */; };
 		7C7C8763199BAE0600D0FF10 /* PushKanColleWidgetRemoteRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7C8762199BAE0600D0FF10 /* PushKanColleWidgetRemoteRepository.m */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C6D270819ABB98100F6AB24 /* PushKanColleWidgetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushKanColleWidgetInfoViewController.h; sourceTree = "<group>"; };
+		7C6D270919ABB98100F6AB24 /* PushKanColleWidgetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushKanColleWidgetInfoViewController.m; sourceTree = "<group>"; };
 		7C7082A819A772AB00431F18 /* akebono_bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = akebono_bot.png; sourceTree = "<group>"; };
 		7C7C8757199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushKanColleWidgetTwitterAccount.h; sourceTree = "<group>"; };
 		7C7C8758199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushKanColleWidgetTwitterAccount.m; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				7CEC38BD1999288A00F25D37 /* Supporting Files */,
 				7C7C8757199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.h */,
 				7C7C8758199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m */,
+				7C6D270819ABB98100F6AB24 /* PushKanColleWidgetInfoViewController.h */,
+				7C6D270919ABB98100F6AB24 /* PushKanColleWidgetInfoViewController.m */,
 			);
 			path = iPushKanColleWidget;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			files = (
 				7CEC38C31999288A00F25D37 /* main.m in Sources */,
 				7C7C876F199BB05900D0FF10 /* PushKanColleWidgetUserRemoteRepository.m in Sources */,
+				7C6D270A19ABB98100F6AB24 /* PushKanColleWidgetInfoViewController.m in Sources */,
 				7C93360019A800D200BE167E /* PushKanColleWidgetEventModel.m in Sources */,
 				7C7C8763199BAE0600D0FF10 /* PushKanColleWidgetRemoteRepository.m in Sources */,
 				7CEC38C71999288A00F25D37 /* PushKanColleWidgetAppDelegate.m in Sources */,
