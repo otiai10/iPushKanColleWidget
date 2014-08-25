@@ -13,5 +13,6 @@
 typedef void (^RemoteRepositoryCompletionHandler)(NSURLResponse *response, NSData *data, NSError *connectionError);
 
 +(NSString *)baseURL;
++(NSString *)clientToken;
 
 @end

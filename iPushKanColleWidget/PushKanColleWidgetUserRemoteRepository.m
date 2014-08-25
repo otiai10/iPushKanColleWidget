@@ -12,7 +12,7 @@
 
 + (NSString *) buildQuery:(NSString *)username idStr:(NSString *)idStr deviceToken:(NSString *)deviceToken
 {
-    return [NSString stringWithFormat:@"username=%@&idStr=%@&deviceToken=%@",username,idStr,deviceToken];
+    return [NSString stringWithFormat:@"username=%@&idStr=%@&deviceToken=%@&clientToken=%@",username,idStr,deviceToken,[self clientToken]];
 }
 
 + (NSURL *) url
@@ -21,7 +21,7 @@
 }
 + (NSURL *) urlOfGet:(NSString *)idStr
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", [super baseURL], @"user/", idStr]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@?clientToken=%@", [super baseURL], @"user/", idStr, [super clientToken]]];
 }
 
 + (void) save:(NSString *)username idStr:(NSString *)idStr deviceToken:(NSString *)deviceToken completion:(RemoteRepositoryCompletionHandler)block
