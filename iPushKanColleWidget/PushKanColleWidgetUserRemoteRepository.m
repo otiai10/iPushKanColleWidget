@@ -40,6 +40,9 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[self urlOfGet:idStr]];
     [request setHTTPMethod:@"GET"];
     [super sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (data == nil || [data isEqual:[NSNull null]]) {
+            return;
+        }
         block(response, data, connectionError);
     }];
 }

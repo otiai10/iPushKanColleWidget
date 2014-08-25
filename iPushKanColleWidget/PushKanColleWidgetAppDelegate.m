@@ -50,8 +50,9 @@
 - (void)registerUserInfoToPushServer
 {
     [PushKanColleWidgetUserRemoteRepository save:self.username idStr:self.idStr deviceToken:self.deviceToken completion:^(NSURLResponse *response, NSData *data, NSError *connectionError){
-        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        NSLog(@"ServerResult\n%@", result);
+        if (connectionError != nil) {
+            NSLog(@"CONNECTION ERROR %@", connectionError);
+        }
     }];
 }
 - (void)applicationWillResignActive:(UIApplication *)application

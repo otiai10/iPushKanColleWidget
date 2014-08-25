@@ -95,6 +95,10 @@
     
     [PushKanColleWidgetUserRemoteRepository load:idStr completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        int code = [[dict objectForKey:@"code"] intValue];
+        if (code != 1000) {
+            return [self showErrorAlert:code message:[dict objectForKey:@"message"]];
+        }
         NSDictionary *user = [dict objectForKey:@"user"];
         self.events = [user objectForKey:@"Events"];
         if (! self.events || [self.events isEqual:[NSNull null]]) {
@@ -102,6 +106,13 @@
         }
         [self.tableView reloadData];
     }];
+}
+
+- (void)showErrorAlert:(int) code message:(NSString *)message
+{
+    NSString *mess = [NSString stringWithFormat:@"code: %ld\nmessage: %@", (long)code, message];
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"iPushKanColleWidget" message:mess delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [av show];
 }
 
 @end

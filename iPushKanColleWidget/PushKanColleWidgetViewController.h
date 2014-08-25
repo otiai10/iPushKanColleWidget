@@ -11,5 +11,6 @@
 @interface PushKanColleWidgetViewController : UITableViewController
 
 @property (strong, atomic) NSArray *events;
+- (void)showErrorAlert:(int)code message:(NSString *)message;
 
 @end
