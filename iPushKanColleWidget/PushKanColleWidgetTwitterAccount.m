@@ -23,7 +23,7 @@
                 blok(@"otiai10", @"140021552");
                 return;
             }
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"i艦これウィジェット" message:@"デバイスにTwitterアカウントが紐づけられてないっぽい？" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"iPushKanColleWidget" message:@"デバイスにTwitterアカウントが紐づけられてないっぽい？" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
             [alert show];
             return;
         }
