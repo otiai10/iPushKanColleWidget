@@ -41,10 +41,6 @@
 }
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    if (DEBUG) {
-        self.deviceToken = @"324175ddc7f8ba3944f60cb88b30b955b6d215570e59b5088a531580742b66e6";
-        [self registerUserInfoToPushServer];
-    }
 }
 
 - (void)registerUserInfoToPushServer

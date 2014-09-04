@@ -102,10 +102,8 @@
 		7C7C875A199BACC400D0FF10 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				7C7C8761199BAE0600D0FF10 /* PushKanColleWidgetRemoteRepository.h */,
-				7C7C8762199BAE0600D0FF10 /* PushKanColleWidgetRemoteRepository.m */,
-				7C7C876D199BB05900D0FF10 /* PushKanColleWidgetUserRemoteRepository.h */,
-				7C7C876E199BB05900D0FF10 /* PushKanColleWidgetUserRemoteRepository.m */,
+				7CB2BAE719B8B02B00FE80CC /* Local */,
+				7CB2BAE619B8AFEB00FE80CC /* Remote */,
 			);
 			name = Repository;
 			sourceTree = "<group>";
@@ -119,6 +117,24 @@
 				7CFD666F19A8BB0D006B41BA /* PushKanColleWidgetColorModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		7CB2BAE619B8AFEB00FE80CC /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				7C7C8761199BAE0600D0FF10 /* PushKanColleWidgetRemoteRepository.h */,
+				7C7C8762199BAE0600D0FF10 /* PushKanColleWidgetRemoteRepository.m */,
+				7C7C876D199BB05900D0FF10 /* PushKanColleWidgetUserRemoteRepository.h */,
+				7C7C876E199BB05900D0FF10 /* PushKanColleWidgetUserRemoteRepository.m */,
+			);
+			name = Remote;
+			sourceTree = "<group>";
+		};
+		7CB2BAE719B8B02B00FE80CC /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Local;
 			sourceTree = "<group>";
 		};
 		7CEC38AA1999288A00F25D37 = {
@@ -433,11 +449,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hiromu Ochiai (9MYY4MNF2Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPushKanColleWidget/iPushKanColleWidget-Prefix.pch";
 				INFOPLIST_FILE = "iPushKanColleWidget/iPushKanColleWidget-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "75a4da15-29f8-42ff-9f8b-31f48fe26666";
+				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -447,11 +465,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hiromu Ochiai (9MYY4MNF2Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iPushKanColleWidget/iPushKanColleWidget-Prefix.pch";
 				INFOPLIST_FILE = "iPushKanColleWidget/iPushKanColleWidget-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "75a4da15-29f8-42ff-9f8b-31f48fe26666";
+				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
