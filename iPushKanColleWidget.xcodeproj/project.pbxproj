@@ -133,6 +133,8 @@
 		7CB2BAE719B8B02B00FE80CC /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				7C7C8757199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.h */,
+				7C7C8758199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m */,
 			);
 			name = Local;
 			sourceTree = "<group>";
@@ -179,8 +181,6 @@
 				7CEC38CC1999288A00F25D37 /* PushKanColleWidgetViewController.m */,
 				7CEC38CE1999288A00F25D37 /* Images.xcassets */,
 				7CEC38BD1999288A00F25D37 /* Supporting Files */,
-				7C7C8757199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.h */,
-				7C7C8758199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m */,
 				7C6D270819ABB98100F6AB24 /* PushKanColleWidgetInfoViewController.h */,
 				7C6D270919ABB98100F6AB24 /* PushKanColleWidgetInfoViewController.m */,
 			);
