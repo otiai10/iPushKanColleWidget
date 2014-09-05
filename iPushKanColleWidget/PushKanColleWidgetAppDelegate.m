@@ -16,6 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    if (DEBUG) {
+        [self clearUserDefaults];
+    }
     // Override point for customization after application launch.
     PushKanColleWidgetTwitterAccount *store = [PushKanColleWidgetTwitterAccount new];
     [store requestAccessToTwitterAccountWithCompletion:^(NSString *username, NSString *idStr){
@@ -31,6 +34,12 @@
         [ud synchronize];
     }];
     return YES;
+}
+
+- (void)clearUserDefaults
+{
+    NSString *bundleId = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:bundleId];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
