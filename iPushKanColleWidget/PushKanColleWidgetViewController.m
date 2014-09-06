@@ -10,6 +10,7 @@
 #import "PushKanColleWidgetUserRemoteRepository.h"
 #import "PushKanColleWidgetEventModel.h"
 #import "PushKanColleWidgetColorModel.h"
+#import "PushKanColleWidgetTwitterAccount.h"
 
 @interface PushKanColleWidgetViewController ()
 
@@ -20,15 +21,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSString *username = [ud stringForKey:@"username"];
-    
-    // ナビゲーションバーのところに名前出す
-    self.navigationItem.title = [NSString stringWithFormat:@"%@", username];
-    
-    [self loadRemoteEventsToTable:nil];
+    PushKanColleWidgetTwitterAccount *store = [PushKanColleWidgetTwitterAccount new];
+    [store requestAccessToTwitterAccountWithCompletion:^(NSString *username, NSString *idStr){
+        self.navigationItem.title = username;
+        [self loadRemoteEventsToTable:idStr completion:nil];
+    }];
     
     UIRefreshControl *rc = [[UIRefreshControl alloc] init];
     [rc addTarget:self action:@selector(onPullToRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -39,7 +37,7 @@
 {
     [rc beginRefreshing];
     
-    [self loadRemoteEventsToTable:^{
+    [self loadRemoteEventsToTable:nil completion:^{
         [rc endRefreshing];
     }];
 }
@@ -84,12 +82,15 @@
     cell.backgroundColor = [PushKanColleWidgetColorModel initByKind:kind];
 }
 
-- (void)loadRemoteEventsToTable:(ReloadCompletionHandler)block
+- (void)loadRemoteEventsToTable:(NSString *)idStr completion:(ReloadCompletionHandler)block
 {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSString *idStr = [ud stringForKey:@"idStr"];
+    if (! idStr) {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        idStr = [ud stringForKey:@"idStr"];
+    }
     
     if (! idStr) {
+        block();
         return;
     }
     

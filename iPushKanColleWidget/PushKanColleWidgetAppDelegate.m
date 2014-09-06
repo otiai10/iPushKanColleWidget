@@ -19,6 +19,7 @@
     if (DEBUG) {
         [self clearUserDefaults];
     }
+    /* このへんをごっそりViewControllerに持って行く
     // Override point for customization after application launch.
     PushKanColleWidgetTwitterAccount *store = [PushKanColleWidgetTwitterAccount new];
     [store requestAccessToTwitterAccountWithCompletion:^(NSString *username, NSString *idStr){
@@ -33,6 +34,7 @@
         [ud setObject:self.idStr forKey:@"idStr"];
         [ud synchronize];
     }];
+     */
     return YES;
 }
 
