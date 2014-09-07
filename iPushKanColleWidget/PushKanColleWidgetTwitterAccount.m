@@ -26,7 +26,9 @@
         ACAccount *account = accounts[0];
         NSString *username = [account username];
         NSString *idStr = [[account valueForKey:@"properties"] objectForKey:@"user_id"];
-        blok(username, idStr);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            blok(username, idStr);
+        });
     }];
 }
 @end

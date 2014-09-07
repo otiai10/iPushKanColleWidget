@@ -12,6 +12,6 @@
 
 @property (strong, atomic) NSString *name;
 @property (strong, atomic) NSString *idStr;
-- (PushKanColleWidgetUserModel *)create:(NSString *)name idStr:(NSString *)idStr;
++ (PushKanColleWidgetUserModel *)create:(NSString *)name idStr:(NSString *)idStr;
 
 @end

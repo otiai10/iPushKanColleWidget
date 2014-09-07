@@ -10,6 +10,7 @@
 #import "PushKanColleWidgetUserRemoteRepository.h"
 #import "PushKanColleWidgetEventModel.h"
 #import "PushKanColleWidgetColorModel.h"
+#import "PushKanColleWidgetUserModel.h"
 #import "PushKanColleWidgetTwitterAccount.h"
 
 @interface PushKanColleWidgetViewController ()
@@ -24,8 +25,9 @@
     
     PushKanColleWidgetTwitterAccount *store = [PushKanColleWidgetTwitterAccount new];
     [store requestAccessToTwitterAccountWithCompletion:^(NSString *username, NSString *idStr){
-        self.navigationItem.title = username;
-        [self loadRemoteEventsToTable:idStr completion:nil];
+        self.user = [PushKanColleWidgetUserModel create:username idStr:idStr];
+        [self changeTitle:nil];
+        [self loadRemoteEventsToTable:nil];
     }];
     
     UIRefreshControl *rc = [[UIRefreshControl alloc] init];
@@ -37,9 +39,17 @@
 {
     [rc beginRefreshing];
     
-    [self loadRemoteEventsToTable:nil completion:^{
+    [self loadRemoteEventsToTable:^{
         [rc endRefreshing];
     }];
+}
+
+- (void)changeTitle:(NSString *)title
+{
+    if (! title) {
+        title = self.user.name;
+    }
+    self.navigationItem.title = title;
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,19 +92,14 @@
     cell.backgroundColor = [PushKanColleWidgetColorModel initByKind:kind];
 }
 
-- (void)loadRemoteEventsToTable:(NSString *)idStr completion:(ReloadCompletionHandler)block
+- (void)loadRemoteEventsToTable:(ReloadCompletionHandler)block
 {
-    if (! idStr) {
-        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-        idStr = [ud stringForKey:@"idStr"];
-    }
-    
-    if (! idStr) {
+    if (! self.user.idStr) {
         block();
         return;
     }
     
-    [PushKanColleWidgetUserRemoteRepository load:idStr completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    [PushKanColleWidgetUserRemoteRepository load:self.user.idStr completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (connectionError != nil) {
             if (block != nil) {
                 block();

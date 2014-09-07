@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Push Kan Colle Widget View Controller - ぽい-->
+        <!--Push Kan Colle Widget View Controller-->
         <scene sceneID="tWr-gO-9bd">
             <objects>
                 <tableViewController id="mwL-LW-aJv" customClass="PushKanColleWidgetViewController" sceneMemberID="viewController">
@@ -27,7 +27,7 @@
                             <outlet property="delegate" destination="mwL-LW-aJv" id="cFO-rQ-R6d"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ぽい" id="cQW-Kl-izN">
+                    <navigationItem key="navigationItem" id="cQW-Kl-izN">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="5Hd-v1-ZVq">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="BLT-nq-Upq">
                                 <rect key="frame" x="282" y="11" width="22" height="22"/>

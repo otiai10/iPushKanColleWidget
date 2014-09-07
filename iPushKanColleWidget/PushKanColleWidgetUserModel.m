@@ -10,9 +10,9 @@
 
 @implementation PushKanColleWidgetUserModel
 
-- (PushKanColleWidgetUserModel *)create:(NSString *)name idStr:(NSString *)idStr
++ (PushKanColleWidgetUserModel *)create:(NSString *)name idStr:(NSString *)idStr
 {
-    PushKanColleWidgetUserModel *user = [super init];
+    PushKanColleWidgetUserModel *user = [[PushKanColleWidgetUserModel alloc] init];
     user.name = name;
     user.idStr = idStr;
     return user;
