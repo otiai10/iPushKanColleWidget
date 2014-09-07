@@ -12,6 +12,8 @@
 
 @property (strong, atomic) NSString *name;
 @property (strong, atomic) NSString *idStr;
+@property (strong, atomic) NSString *deviceToken;
 + (PushKanColleWidgetUserModel *)create:(NSString *)name idStr:(NSString *)idStr;
++ (PushKanColleWidgetUserModel *)createWithDeviceToken:(NSString *)name idStr:(NSString *)idStr deviceToken:(NSString *)deviceToken;
 
 @end

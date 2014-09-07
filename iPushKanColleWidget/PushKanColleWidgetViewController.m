@@ -8,6 +8,7 @@
 
 #import "PushKanColleWidgetViewController.h"
 #import "PushKanColleWidgetUserRemoteRepository.h"
+#import "PushKanColleWidgetUserLocalRepository.h"
 #import "PushKanColleWidgetEventModel.h"
 #import "PushKanColleWidgetColorModel.h"
 #import "PushKanColleWidgetUserModel.h"
@@ -26,8 +27,12 @@
     PushKanColleWidgetTwitterAccount *store = [PushKanColleWidgetTwitterAccount new];
     [store requestAccessToTwitterAccountWithCompletion:^(NSString *username, NSString *idStr){
         self.user = [PushKanColleWidgetUserModel create:username idStr:idStr];
-        [self changeTitle:nil];
-        [self loadRemoteEventsToTable:nil];
+        [PushKanColleWidgetUserLocalRepository save:self.user];
+        [self changeTitle:self.user.name];
+        
+        UIApplication *application = [UIApplication sharedApplication];
+        UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound;
+        [application registerForRemoteNotificationTypes:types];
     }];
     
     UIRefreshControl *rc = [[UIRefreshControl alloc] init];
@@ -94,12 +99,15 @@
 
 - (void)loadRemoteEventsToTable:(ReloadCompletionHandler)block
 {
-    if (! self.user.idStr) {
-        block();
+    // idStrがファーストロードでちゃんと来るとループする...
+    NSString *idStr = self.user.idStr;
+    if (! idStr) {
+        if (block) {
+            block();
+        }
         return;
     }
-    
-    [PushKanColleWidgetUserRemoteRepository load:self.user.idStr completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    [PushKanColleWidgetUserRemoteRepository load:idStr completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (connectionError != nil) {
             if (block != nil) {
                 block();

@@ -17,5 +17,13 @@
     user.idStr = idStr;
     return user;
 }
++ (PushKanColleWidgetUserModel *)createWithDeviceToken:(NSString *)name idStr:(NSString *)idStr deviceToken:(NSString *)deviceToken
+{
+    PushKanColleWidgetUserModel *user = [[PushKanColleWidgetUserModel alloc] init];
+    user.name = name;
+    user.idStr = idStr;
+    user.deviceToken = deviceToken;
+    return user;
+}
 
 @end

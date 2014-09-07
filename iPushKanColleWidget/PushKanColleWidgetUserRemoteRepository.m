@@ -7,6 +7,7 @@
 //
 
 #import "PushKanColleWidgetUserRemoteRepository.h"
+#import "PushKanColleWidgetUserModel.h"
 
 @implementation PushKanColleWidgetUserRemoteRepository
 
@@ -24,11 +25,11 @@
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@?clientToken=%@", [super baseURL], @"user/", idStr, [super clientToken]]];
 }
 
-+ (void) save:(NSString *)username idStr:(NSString *)idStr deviceToken:(NSString *)deviceToken completion:(RemoteRepositoryCompletionHandler)block
++ (void) save:(PushKanColleWidgetUserModel *)user completion:(RemoteRepositoryCompletionHandler)block
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[self url]];
     [request setHTTPMethod:@"POST"];
-    NSString *params = [self buildQuery:username idStr:idStr deviceToken:deviceToken];
+    NSString *params = [self buildQuery:user.name idStr:user.idStr deviceToken:user.deviceToken];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     [super sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         block(response, data, connectionError);

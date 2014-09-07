@@ -13,6 +13,7 @@
 		7C7C8763199BAE0600D0FF10 /* PushKanColleWidgetRemoteRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7C8762199BAE0600D0FF10 /* PushKanColleWidgetRemoteRepository.m */; };
 		7C7C876F199BB05900D0FF10 /* PushKanColleWidgetUserRemoteRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7C876E199BB05900D0FF10 /* PushKanColleWidgetUserRemoteRepository.m */; };
 		7C93360019A800D200BE167E /* PushKanColleWidgetEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9335FF19A800D200BE167E /* PushKanColleWidgetEventModel.m */; };
+		7C96672419BC33B90032605C /* PushKanColleWidgetUserLocalRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C96672319BC33B90032605C /* PushKanColleWidgetUserLocalRepository.m */; };
 		7CB2BAED19B9DA0600FE80CC /* PushKanColleWidgetUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB2BAEC19B9DA0600FE80CC /* PushKanColleWidgetUserModel.m */; };
 		7CEC38B71999288A00F25D37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38B61999288A00F25D37 /* Foundation.framework */; };
 		7CEC38B91999288A00F25D37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEC38B81999288A00F25D37 /* CoreGraphics.framework */; };
@@ -53,6 +54,8 @@
 		7C7C876E199BB05900D0FF10 /* PushKanColleWidgetUserRemoteRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushKanColleWidgetUserRemoteRepository.m; sourceTree = "<group>"; };
 		7C9335FE19A800D200BE167E /* PushKanColleWidgetEventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushKanColleWidgetEventModel.h; sourceTree = "<group>"; };
 		7C9335FF19A800D200BE167E /* PushKanColleWidgetEventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushKanColleWidgetEventModel.m; sourceTree = "<group>"; };
+		7C96672219BC33B90032605C /* PushKanColleWidgetUserLocalRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushKanColleWidgetUserLocalRepository.h; sourceTree = "<group>"; };
+		7C96672319BC33B90032605C /* PushKanColleWidgetUserLocalRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushKanColleWidgetUserLocalRepository.m; sourceTree = "<group>"; };
 		7CB2BAEB19B9DA0600FE80CC /* PushKanColleWidgetUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushKanColleWidgetUserModel.h; sourceTree = "<group>"; };
 		7CB2BAEC19B9DA0600FE80CC /* PushKanColleWidgetUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushKanColleWidgetUserModel.m; sourceTree = "<group>"; };
 		7CEC38B31999288A00F25D37 /* iPushKanColleWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPushKanColleWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +143,8 @@
 			children = (
 				7C7C8757199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.h */,
 				7C7C8758199B1B4900D0FF10 /* PushKanColleWidgetTwitterAccount.m */,
+				7C96672219BC33B90032605C /* PushKanColleWidgetUserLocalRepository.h */,
+				7C96672319BC33B90032605C /* PushKanColleWidgetUserLocalRepository.m */,
 			);
 			name = Local;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				7CEC38C31999288A00F25D37 /* main.m in Sources */,
 				7CB2BAED19B9DA0600FE80CC /* PushKanColleWidgetUserModel.m in Sources */,
 				7C7C876F199BB05900D0FF10 /* PushKanColleWidgetUserRemoteRepository.m in Sources */,
+				7C96672419BC33B90032605C /* PushKanColleWidgetUserLocalRepository.m in Sources */,
 				7C6D270A19ABB98100F6AB24 /* PushKanColleWidgetInfoViewController.m in Sources */,
 				7C93360019A800D200BE167E /* PushKanColleWidgetEventModel.m in Sources */,
 				7C7C8763199BAE0600D0FF10 /* PushKanColleWidgetRemoteRepository.m in Sources */,

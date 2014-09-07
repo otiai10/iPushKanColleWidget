@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 
 #import "PushKanColleWidgetRemoteRepository.h"
+#import "PushKanColleWidgetUserModel.h"
 
 @interface PushKanColleWidgetUserRemoteRepository : PushKanColleWidgetRemoteRepository
 
-+ (void) save:(NSString *)username idStr:(NSString *)idStr deviceToken:(NSString *)deviceToken completion:(RemoteRepositoryCompletionHandler)block;
++ (void) save:(PushKanColleWidgetUserModel *)user completion:(RemoteRepositoryCompletionHandler)block;
 + (void) load:(NSString *)idStr completion:(RemoteRepositoryCompletionHandler)block;
 
 @end

@@ -9,6 +9,8 @@
 #import "PushKanColleWidgetAppDelegate.h"
 #import "PushKanColleWidgetTwitterAccount.h"
 #import "PushKanColleWidgetUserRemoteRepository.h"
+#import "PushKanColleWidgetUserLocalRepository.h"
+#import "PushKanColleWidgetViewController.h"
 
 @import Accounts;
 
@@ -19,22 +21,6 @@
     if (DEBUG) {
         [self clearUserDefaults];
     }
-    /* このへんをごっそりViewControllerに持って行く
-    // Override point for customization after application launch.
-    PushKanColleWidgetTwitterAccount *store = [PushKanColleWidgetTwitterAccount new];
-    [store requestAccessToTwitterAccountWithCompletion:^(NSString *username, NSString *idStr){
-        // If implement requesting here in AppDelegate, username and idStr should be app property
-        self.username = username;
-        self.idStr = idStr;
-        UIRemoteNotificationType types = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge;
-        [application registerForRemoteNotificationTypes:types];
-        
-        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-        [ud setObject:self.username forKey:@"username"];
-        [ud setObject:self.idStr forKey:@"idStr"];
-        [ud synchronize];
-    }];
-     */
     return YES;
 }
 
@@ -48,20 +34,34 @@
 {
     self.deviceToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    [self registerUserInfoToPushServer];
+    PushKanColleWidgetUserModel *user = [PushKanColleWidgetUserLocalRepository load];
+    user.deviceToken = self.deviceToken;
+    [PushKanColleWidgetUserRemoteRepository save:user completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (connectionError) {
+            // TODO: showAlert
+            return;
+        }
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSUTF8StringEncoding error:nil];
+        int code = [[dict objectForKey:@"code"] intValue];
+        if (code != 1000) {
+            [self showAlert:[dict objectForKey:@"message"]];
+            return;
+        }
+        [self refreshTable];
+        return;
+    }];
+}
+
+- (void)refreshTable
+{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    PushKanColleWidgetViewController *vc = [sb instantiateViewControllerWithIdentifier:@"main"];
+    [vc loadRemoteEventsToTable:nil];
 }
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
 }
 
-- (void)registerUserInfoToPushServer
-{
-    [PushKanColleWidgetUserRemoteRepository save:self.username idStr:self.idStr deviceToken:self.deviceToken completion:^(NSURLResponse *response, NSData *data, NSError *connectionError){
-        if (connectionError != nil) {
-            NSLog(@"CONNECTION ERROR %@", connectionError);
-        }
-    }];
-}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -87,6 +87,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) showAlert:(NSString *)message
+{
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"艦これウィジェットの通知するやつのエラーです" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [av show];
 }
 
 @end

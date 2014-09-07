@@ -11,9 +11,10 @@
 
 @interface PushKanColleWidgetViewController : UITableViewController
 
+typedef void (^ReloadCompletionHandler)(void);
 @property (strong, atomic) NSArray *events;
 @property (strong, atomic) PushKanColleWidgetUserModel *user;
 - (void)showErrorAlert:(int)code message:(NSString *)message;
-typedef void (^ReloadCompletionHandler)(void);
+- (void)loadRemoteEventsToTable:(ReloadCompletionHandler)block;
 
 @end
