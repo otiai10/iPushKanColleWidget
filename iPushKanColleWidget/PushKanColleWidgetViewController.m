@@ -137,7 +137,7 @@
 - (void)showErrorAlert:(int) code message:(NSString *)message
 {
     NSString *mess = [NSString stringWithFormat:@"code: %ld\nmessage: %@", (long)code, message];
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"iPushKanColleWidget" message:mess delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"艦これウィジェットの通知するやつ" message:mess delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [av show];
 }
 
