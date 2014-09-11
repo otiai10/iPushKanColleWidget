@@ -99,15 +99,10 @@
 
 - (void)loadRemoteEventsToTable:(ReloadCompletionHandler)block
 {
-    NSLog(@"Fired!!");
-
     // {{{ 以下のコードだと、初期読み込みでもちゃんとidStrが取れる
     PushKanColleWidgetUserModel *user = [PushKanColleWidgetUserLocalRepository load];
     NSString *idStr = user.idStr;
     // }}}
-
-    // idStrが初期読み込みでちゃんと来るとループするので、初期読み込みでは取れない方法をここでは行う
-    idStr = self.user.idStr;
 
     if (! idStr) {
         if (block) {

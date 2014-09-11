@@ -47,7 +47,8 @@
             [self showAlert:[dict objectForKey:@"message"]];
             return;
         }
-        [self refreshTable];
+        // 謎ループするので初期読み込みはしない
+        // [self refreshTable];
         return;
     }];
 }
